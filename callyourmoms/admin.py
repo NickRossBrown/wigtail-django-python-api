@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from callyourmoms import models
+
+
+admin.site.register(models.MemberDetailPage)
+admin.site.register(models.MemberIndexPage)
+
