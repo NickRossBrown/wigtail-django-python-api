@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    {{ page.week }}
+    <br>
+    {{ page.year }}
+    <br>
+    <br>
+    {{ page.thumbnail_description }}
+    <br>
+    {{ page.content }}
+
+    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+
+{% endblock %}
