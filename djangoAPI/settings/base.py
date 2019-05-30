@@ -16,12 +16,6 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-env = os.environ.copy()
-AWS_STORAGE_BUCKET_NAME = env['AWS_STORAGE_BUCKET_NAME']
-AWS_S3_REGION_NAME = env['AWS_S3_REGION_NAME']
-AWS_ACCESS_KEY_ID = env['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = env['AWS_SECRET_ACCESS_KEY']
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
