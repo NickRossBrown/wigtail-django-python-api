@@ -20,6 +20,10 @@ class MemberIndexPage(Page):
 
     subpage_types = ['callyourmoms.MemberDetailPage']
 
+    api_fields = [
+        APIField("index_page_content"),
+    ]
+
     def get_context(self, request, *args, **kwargs):
         """ adding custom stuff to our context """
         context = super().get_context(self, request, *args, **kwargs)
@@ -52,6 +56,12 @@ class MemberDetailPage(Page):
     parent_page_types = ['callyourmoms.MemberIndexPage']
     subpage_types = []
 
+    api_fields = [
+        APIField("name"),
+        APIField("intro"),
+        APIField("content"),
+    ]
+
     class Meta: 
         verbose_name = "Member Page"
         verbose_name_plural = "Members"
@@ -65,6 +75,10 @@ class ArticleIndexPage(Page):
     ]
 
     subpage_types = ['callyourmoms.ArticleDetailPage']
+
+    api_fields = [
+        APIField("index_page_content"),
+    ]
 
     def get_context(self, request, *args, **kwargs):
         """ adding custom stuff to our context """
