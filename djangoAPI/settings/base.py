@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'home',
     'search',
     'callyourmoms',
+    'storages',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
