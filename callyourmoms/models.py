@@ -175,12 +175,17 @@ class ArticleDetailPage(Page):
         blank=True,
     )
 
+    @property
+    def year_date(self):
+        return self.year
+
     api_fields = [
         APIField("thumbnail_image"),
         APIField("authors"),
         APIField("thumbnail_description"),
         APIField("week"),
         APIField("year"),
+        APIField("year_date"),
         APIField("content"),
     ]
 
