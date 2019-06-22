@@ -121,7 +121,7 @@ class YearTag(models.Model):
 
 class Author(models.Model):
     """An Author tag to be used for signatures"""
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, default='Anon', blank=True, null=True,)
 
     def __str__(self):
         return self.name
@@ -159,7 +159,8 @@ class ArticleDetailPage(Page):
         help_text='thumb nail images will be rendered 100 x 100 px'
     )
     thumbnail_description = models.CharField(max_length=250)   
-    week = models.CharField(max_length=50, choices=WEEK_CHOICES, blank=True, null=True)
+    week = models.CharField(max_length=50, choices=WEEK_CHOICES,
+                            blank=True, null=True, default='UNDEFINED')
     year = models.ForeignKey(
         YearTag,
         on_delete=models.SET_NULL,
@@ -177,7 +178,7 @@ class ArticleDetailPage(Page):
 
     @property
     def year_date(self):
-        return self.year
+        return self.year.year
 
     api_fields = [
         APIField("thumbnail_image"),
